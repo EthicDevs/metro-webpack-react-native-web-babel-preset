@@ -29,8 +29,22 @@ const webpack = {
 };
 
 const metro = {
-  presets: [require("metro-react-native-babel-preset")],
-  plugins: [],
+  presets: [
+    [
+      require("metro-react-native-babel-preset"),
+      // For new no React import JSX to work
+      // See. https://github.com/facebook/metro/issues/646#issuecomment-799174473
+      { useTransformReactJSXExperimental: true },
+    ],
+  ],
+  plugins: [
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        runtime: "automatic",
+      },
+    ],
+  ],
 };
 
 module.exports = ({ caller }, { noPresetEnv = false }) => {
