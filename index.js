@@ -9,8 +9,8 @@ const webpackNoPresetEnv = {
     require("@babel/plugin-transform-react-display-name"),
     require("@babel/plugin-transform-react-jsx-source"),
     require("@babel/plugin-transform-react-jsx"),
-    require("babel-plugin-react-native-web")
-  ]
+    require("babel-plugin-react-native-web"),
+  ],
 };
 
 const webpack = {
@@ -21,16 +21,16 @@ const webpack = {
       {
         useBuiltIns: "usage",
         modules: "cjs",
-        corejs: 3
-      }
-    ]
+        corejs: 3,
+      },
+    ],
   ],
-  plugins: webpackNoPresetEnv.plugins
+  plugins: webpackNoPresetEnv.plugins,
 };
 
 const metro = {
   presets: [require("metro-react-native-babel-preset")],
-  plugins: []
+  plugins: [],
 };
 
 module.exports = ({ caller }, { noPresetEnv = false }) => {
