@@ -1,4 +1,4 @@
-# metro-webpack-react-native-web-babel-preset
+# @ethicdevs/metro-webpack-react-native-web-babel-preset
 
 [![npm link](https://img.shields.io/npm/v/@kall/babel-preset-react-native-web-quick.svg)](https://www.npmjs.com/package/@kall/babel-preset-react-native-web-quick)
 
@@ -21,14 +21,14 @@ module.exports = ({ caller }) => {
 Install with npm. core-js@3 is a peer dependency and you might need to install it seperately.
 
 ```
-yarn add -D core-js@3 metro-webpack-react-native-web-babel-preset
+yarn add -D core-js@3 @ethicdevs/metro-webpack-react-native-web-babel-preset
 ```
 
 Add this to your Babel config file (`babel.config.js`) :
 
 ```js
 module.exports = {
-  presets: ["metro-webpack-react-native-web-babel-preset"],
+  presets: ["@ethicdevs/metro-webpack-react-native-web-babel-preset"],
 };
 ```
 
@@ -37,7 +37,7 @@ If you want to provide your own preset-env config (in `babel.config.js` or `babe
 ```js
 module.exports = {
   presets: [
-    ["metro-webpack-react-native-web-babel-preset", { noPresetEnv: true }],
+    ["@ethicdevs/metro-webpack-react-native-web-babel-preset", { noPresetEnv: true }],
   ],
 };
 ```

@@ -1,11 +1,11 @@
 {
-  "name": "metro-webpack-react-native-web-babel-preset",
+  "name": "@ethicdevs/metro-webpack-react-native-web-babel-preset",
   "version": "2.0.0",
   "description": "Babel preset that configures itself for both metro/react-native and CRA/webpack/react-native-web",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WNemencha/metro-webpack-react-native-web-babel-preset.git"
+    "url": "git+https://github.com/EthicDevs/metro-webpack-react-native-web-babel-preset.git"
   },
   "keywords": [
     "babel",
@@ -19,9 +19,9 @@
   "author": "William Nemencha <contact@wnemencha.me>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/WNemencha/metro-webpack-react-native-web-babel-preset/issues"
+    "url": "https://github.com/EthicDevs/metro-webpack-react-native-web-babel-preset/issues"
   },
-  "homepage": "https://github.com/WNemencha/metro-webpack-react-native-web-babel-preset#readme",
+  "homepage": "https://github.com/EthicDevs/metro-webpack-react-native-web-babel-preset#readme",
   "dependencies": {
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-flow": "^7.16.7",
