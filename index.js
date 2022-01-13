@@ -1,7 +1,7 @@
 const webpackNoPresetEnv = {
   presets: [require("@babel/preset-typescript"), require("@babel/preset-flow")],
   plugins: [
-    require("@babel/plugin-proposal-class-properties"),
+    [require("@babel/plugin-proposal-class-properties"), { loose: false }],
     require("@babel/plugin-proposal-nullish-coalescing-operator"),
     require("@babel/plugin-proposal-object-rest-spread"),
     require("@babel/plugin-proposal-optional-catch-binding"),
