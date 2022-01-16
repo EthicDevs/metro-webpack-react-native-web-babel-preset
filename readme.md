@@ -1,36 +1,26 @@
 # @ethicdevs/metro-webpack-react-native-web-babel-preset
 
-[![npm link](https://img.shields.io/npm/v/@kall/babel-preset-react-native-web-quick.svg)](https://www.npmjs.com/package/@kall/babel-preset-react-native-web-quick)
+[![npm link](https://img.shields.io/npm/v/@ethicdevs/metro-webpack-react-native-web-babel-preset.svg)](https://www.npmjs.com/package/@ethicdevs/metro-webpack-react-native-web-babel-preset)
 
 A babel preset that configures itself for both metro with react-native and webpack with react-native-web. Use this instead of `module:metro-react-native-babel-preset` in your Babel config file.
 
-**If this preset doesn't match your exact use case, you can just copy this core bit into your `babel.config.js`:**
-
-```js
-module.exports = ({ caller }) => {
-  // is either "metro" or "babel-loader"
-  const runningIn = caller(({ name }) => name);
-  return {
-    /* your config here */
-  };
-};
-```
-
 ## Usage
 
-Install with npm. core-js@3 is a peer dependency and you might need to install it seperately.
+Install with either npm or yarn (as you prefer). `core-js@3` is a peer dependency and you might need to install it seperately.
 
 ```
 yarn add -D core-js@3 @ethicdevs/metro-webpack-react-native-web-babel-preset
 ```
 
-Add this to your Babel config file (`babel.config.js`) :
+Add this to your Babel config file (`babel.config.js`):
 
 ```js
 module.exports = {
   presets: ["@ethicdevs/metro-webpack-react-native-web-babel-preset"],
 };
 ```
+
+### With `noPresetEnv` option
 
 If you want to provide your own preset-env config (in `babel.config.js` or `babel-loader` config, etc), you can exclude `@babel/preset-env` with the option `noPresetEnv`.
 
@@ -100,6 +90,18 @@ Don't forget to add a `.browserslistrc` to your root directory or your bundle wi
 >0.5%
 not ie 11
 not samsung < 8
+```
+
+## Magic bit
+
+```js
+module.exports = ({ caller }) => {
+  // is either "metro" or "babel-loader"
+  const runningIn = caller(({ name }) => name);
+  return {
+    /* your config here */
+  };
+};
 ```
 
 ## Changelog
