@@ -1,31 +1,36 @@
 {
-  "name": "@kall/babel-preset-react-native-web-quick",
-  "version": "1.4.1",
-  "description": "Babel preset that configures itself for both metro/react-native and webpack/react-native-web",
+  "name": "@ethicdevs/metro-webpack-react-native-web-babel-preset",
+  "version": "2.0.3",
+  "description": "Babel preset that configures itself for both metro/react-native and CRA/webpack/react-native-web",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/karlsander/babel-preset-react-native-web-quick.git"
+    "url": "git+https://github.com/EthicDevs/metro-webpack-react-native-web-babel-preset.git"
   },
   "keywords": [
     "babel",
-    "preset"
+    "preset",
+    "metro",
+    "webpack",
+    "react",
+    "react-native",
+    "react-native-web"
   ],
-  "author": "Karl Sander <kall@kall.ws>",
-  "license": "ISC",
+  "author": "William Nemencha <contact@wnemencha.me>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/karlsander/babel-preset-react-native-web-quick/issues"
+    "url": "https://github.com/EthicDevs/metro-webpack-react-native-web-babel-preset/issues"
   },
-  "homepage": "https://github.com/karlsander/babel-preset-react-native-web-quick#readme",
+  "homepage": "https://github.com/EthicDevs/metro-webpack-react-native-web-babel-preset#readme",
   "dependencies": {
-    "@babel/preset-env": "^7.4.3",
-    "@babel/preset-flow": "^7.0.0",
-    "@babel/preset-typescript": "^7.3.3",
-    "babel-plugin-react-native-web": "^0.11.2",
-    "metro-react-native-babel-preset": "^0.53.1"
+    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-flow": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "babel-plugin-react-native-web": "^0.17.5",
+    "metro-react-native-babel-preset": "^0.66.2"
   },
   "peerDependencies": {
-    "core-js": "^3.0.1",
-    "@babel/core": "^7.0.0-0"
+    "core-js": "^3.20.2",
+    "@babel/core": "^7.16.7"
   }
 }

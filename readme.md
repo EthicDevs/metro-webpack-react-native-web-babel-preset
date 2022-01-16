@@ -1,8 +1,8 @@
-# babel-preset-react-native-web-quick
+# @ethicdevs/metro-webpack-react-native-web-babel-preset
 
 [![npm link](https://img.shields.io/npm/v/@kall/babel-preset-react-native-web-quick.svg)](https://www.npmjs.com/package/@kall/babel-preset-react-native-web-quick)
 
-A babel preset that configures itself for both metro with react-native and webpack with react-native-web. Use this instead of `module:metro-react-native-babel-preset`.
+A babel preset that configures itself for both metro with react-native and webpack with react-native-web. Use this instead of `module:metro-react-native-babel-preset` in your Babel config file.
 
 **If this preset doesn't match your exact use case, you can just copy this core bit into your `babel.config.js`:**
 
@@ -21,25 +21,24 @@ module.exports = ({ caller }) => {
 Install with npm. core-js@3 is a peer dependency and you might need to install it seperately.
 
 ```
-npm install --save-dev @kall/babel-preset-react-native-web-quick
-npm install --save-dev core-js@3
+yarn add -D core-js@3 @ethicdevs/metro-webpack-react-native-web-babel-preset
 ```
 
-Add this `babel.config.js` to your project:
+Add this to your Babel config file (`babel.config.js`) :
 
 ```js
 module.exports = {
-  presets: ["@kall/babel-preset-react-native-web-quick"]
+  presets: ["@ethicdevs/metro-webpack-react-native-web-babel-preset"],
 };
 ```
 
-If you want to provide your own preset env config (in `babel.config.js` or `babel-loader` config, etc), you can exclude `@babel/preset-env` with the option `noPresetEnv`.
+If you want to provide your own preset-env config (in `babel.config.js` or `babel-loader` config, etc), you can exclude `@babel/preset-env` with the option `noPresetEnv`.
 
 ```js
 module.exports = {
   presets: [
-    ["@kall/babel-preset-react-native-web-quick", { noPresetEnv: true }]
-  ]
+    ["@ethicdevs/metro-webpack-react-native-web-babel-preset", { noPresetEnv: true }],
+  ],
 };
 ```
 
@@ -69,10 +68,10 @@ module.exports = {
         test: /\.(js|jsx|tsx|ts|mjs)$/,
         include: [path.resolve(__dirname, "src")],
         use: {
-          loader: "babel-loader"
-        }
-      }
-    ]
+          loader: "babel-loader",
+        },
+      },
+    ],
   },
   resolve: {
     extensions: [
@@ -83,9 +82,9 @@ module.exports = {
       ".web.tsx",
       ".tsx",
       ".web.mjs",
-      ".mjs"
-    ]
-  }
+      ".mjs",
+    ],
+  },
 };
 ```
 

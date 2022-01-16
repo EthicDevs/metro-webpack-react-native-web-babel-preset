@@ -1,7 +1,7 @@
 const webpackNoPresetEnv = {
   presets: [require("@babel/preset-typescript"), require("@babel/preset-flow")],
   plugins: [
-    require("@babel/plugin-proposal-class-properties"),
+    [require("@babel/plugin-proposal-class-properties"), { loose: true }],
     require("@babel/plugin-proposal-nullish-coalescing-operator"),
     require("@babel/plugin-proposal-object-rest-spread"),
     require("@babel/plugin-proposal-optional-catch-binding"),
@@ -9,8 +9,8 @@ const webpackNoPresetEnv = {
     require("@babel/plugin-transform-react-display-name"),
     require("@babel/plugin-transform-react-jsx-source"),
     require("@babel/plugin-transform-react-jsx"),
-    require("babel-plugin-react-native-web")
-  ]
+    require("babel-plugin-react-native-web"),
+  ],
 };
 
 const webpack = {
@@ -21,16 +21,30 @@ const webpack = {
       {
         useBuiltIns: "usage",
         modules: "cjs",
-        corejs: 3
-      }
-    ]
+        corejs: 3,
+      },
+    ],
   ],
-  plugins: webpackNoPresetEnv.plugins
+  plugins: webpackNoPresetEnv.plugins,
 };
 
 const metro = {
-  presets: [require("metro-react-native-babel-preset")],
-  plugins: []
+  presets: [
+    [
+      require("metro-react-native-babel-preset"),
+      // For new no React import JSX to work
+      // See. https://github.com/facebook/metro/issues/646#issuecomment-799174473
+      { useTransformReactJSXExperimental: true },
+    ],
+  ],
+  plugins: [
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        runtime: "automatic",
+      },
+    ],
+  ],
 };
 
 module.exports = ({ caller }, { noPresetEnv = false }) => {
