@@ -39,7 +39,7 @@ const metro = {
   ],
   plugins: [
     [
-      "@babel/plugin-transform-react-jsx",
+      require("@babel/plugin-transform-react-jsx"),
       {
         runtime: "automatic",
       },
