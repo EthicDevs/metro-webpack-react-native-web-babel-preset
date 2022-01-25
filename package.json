@@ -1,6 +1,6 @@
 {
   "name": "@ethicdevs/metro-webpack-react-native-web-babel-preset",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Babel preset that configures itself for both metro/react-native and CRA/webpack/react-native-web",
   "main": "index.js",
   "repository": {
